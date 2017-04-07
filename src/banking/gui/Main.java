@@ -20,13 +20,8 @@ final class Main {
 	 * @throws Exception as per typical main specifications
 	 */
 	public static void main(final String[] args) throws Exception {
-
-		if (args.length != 1) {
-			System.out.println("Usage: java FormMain <property file>");
-			System.exit(1);
-		}
-
-		String propertyFile = args[0];
+		
+		String propertyFile = "my.properties";
 		JFrame frame = new MainFrame(propertyFile);
 		frame.setVisible(true);
 
