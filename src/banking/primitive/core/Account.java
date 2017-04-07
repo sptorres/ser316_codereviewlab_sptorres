@@ -1,5 +1,7 @@
 package banking.primitive.core;
 
+import banking.primitive.core.Account.State;
+
 public abstract class Account implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -43,7 +45,14 @@ public abstract class Account implements java.io.Serializable {
      * @return true if the deposit was successful, false if not due to amount or
      *         invalid state
      */
-    public abstract boolean deposit(float amount);
+    public boolean deposit(float amount) {
+		if (getState() != State.CLOSED && amount > 0.0f) {
+			if (balance >= 0.0f) {
+				setState(State.OPEN);
+			}
+		}
+		return false;
+	}
 
     /**
      * Takes money out of an account. If the balance falls below 0 then the

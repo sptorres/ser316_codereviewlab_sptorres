@@ -12,18 +12,6 @@ public class Savings extends Account {
 		super(name, balance);
 	}
 
-	/**
-	 * A deposit comes with a fee of 50 cents per deposit
-	 */
-	public boolean deposit(float amount) {
-		if (getState() != State.CLOSED && amount > 0.0f) {
-			balance = balance + amount - 0.50F;
-			if (balance >= 0.0f) {
-				setState(State.OPEN);
-			}
-		}
-		return false;
-	}
 
 	/**
 	 * A withdrawal. After 3 withdrawals a fee of $1 is added to each withdrawal.
