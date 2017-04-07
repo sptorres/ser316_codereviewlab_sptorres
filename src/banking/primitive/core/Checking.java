@@ -1,3 +1,12 @@
+/*
+  File:	Checking.java
+  Author:	Shayne Torres
+  Date:	6/4/2017
+  
+  Description: Class declaration for a Checking account object. Checking accounts allow the user to 
+   				deposit and withdraw money regularly.
+*/
+
 package banking.primitive.core;
 
 public class Checking extends Account {
